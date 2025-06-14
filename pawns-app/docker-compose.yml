@@ -1,0 +1,32 @@
+services:
+  pawns-app:
+    # Uses the official Pawns.app (IPRoyal) image from Docker Hub.
+    image: iproyal/pawns-cli:latest
+
+    # Assigns an easy-to-remember container name.
+    container_name: pawns-app-container
+    # Command to start Pawns with your credentials.
+    # IMPORTANT! Replace the values below with your data.
+    command:
+      - "-accept-tos"        # Accept tos. Required.
+      - "-email"             # Your IPRoyal registration email.
+      - "${IPROYAL_EMAIL}"   # Use an environment variable for security.
+      - "-password"          # Your IPRoyal account password.
+      - "${IPROYAL_PASSWORD}" # Use an environment variable for security.
+      - "-device-name"       # A name to identify this device in your dashboard.
+      - "${IPROYAL_DEVICE_NAME}" # Use an environment variable for security.
+
+    # Restart policy to keep the service active.
+    restart: unless-stopped
+    
+    # (Optional but recommended) "host" network mode.
+    # Improves connectivity by giving direct access to the network.
+    network_mode: host
+
+    # (Optional but recommended) Volume to persist data.
+    # Helps maintain device identity if the container restarts.
+    volumes:
+      - pawns_data:/app
+
+volumes:
+  pawns_data: {}

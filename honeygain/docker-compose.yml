@@ -1,0 +1,27 @@
+services:
+  honeygain:
+    # Uses the official Honeygain image from Docker Hub.
+    image: honeygain/honeygain:latest
+
+    # Assigns an easy-to-remember container name.
+    container_name: honeygain-app
+
+    # Command to start Honeygain with your credentials.
+    # IMPORTANT! Replace the values below with your data.
+    command:
+      - "-tou-accept"        # Accepts the Terms of Use. Required.
+      - "-email"      # Your Honeygain registration email.
+      - "${HONEYGAIN_EMAIL}"  # Use an environment variable for security.
+      - "-pass"       # Your Honeygain account password.
+      - "${HONEYGAIN_PASSWORD}"  # Use an environment variable for security.
+      - "-device"     # A name to identify this device in your dashboard.
+      - "${HONEYGAIN_DEVICE_NAME}"  # Use an environment variable for security.
+
+    # Restart policy. 'unless-stopped' restarts the container if it fails,
+    # but not if you manually stop it. Ideal for a 24/7 service.
+    restart: unless-stopped
+
+    # (Optional but recommended) "host" network mode.
+    # Gives the container direct access to the host network,
+    # which can improve connectivity and performance.
+    network_mode: host
