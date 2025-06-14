@@ -1,12 +1,12 @@
 services:
   traffmonetizer:
-    # Imagen oficial de TraffMonetizer
+    # Official TraffMonetizer image
     image: traffmonetizer/cli_v2:arm64v8
 
     container_name: traffmonetizer-container
 
-    # Comando para iniciar el servicio con tu token.
-    # ¡IMPORTANTE! Reemplaza TU_TOKEN_AQUI con tu token real.
+    # Command to start the service with your token.
+    # IMPORTANT! Replace with your real token.
     command: start accept --token ${TRAFFMONETIZER_TOKEN} --device-name ${TRAFFMONETIZER_DEVICE_NAME}
 
     restart: unless-stopped

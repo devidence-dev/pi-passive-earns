@@ -22,12 +22,13 @@
 
 ## 🌟 What's Included
 
-This repository includes Docker configurations for three popular passive earning platforms:
+This repository includes Docker configurations for four popular passive earning platforms:
 
 | Service | Description | 🔗 Sign Up Link |
 |---------|-------------|------------------|
 | 🍯 **Honeygain** | Share your unused internet bandwidth and earn money | [Join Honeygain](https://r.honeygain.me/81E75AD93E) |
 | ♟️ **Pawns.app** | Monetize your internet connection through IPRoyal's network | [Join Pawns.app](https://pawns.app/?r=14794322) |
+| 📦 **PacketShare** | Earn by sharing your internet bandwidth | [Join PacketShare](https://www.packetshare.io/?code=B9145C90A9403C82) |
 | 🚦 **TraffMonetizer** | Earn by sharing your internet traffic | [Join TraffMonetizer](https://traffmonetizer.com/?aff=1908800) |
 
 ## 💸 Earning Potential
@@ -64,11 +65,12 @@ cd pi-passive-earns
 
 ### 2️⃣ Create Environment Files
 
-Create `.env` files for each service with your credentials:
+Each service requires a `.env` file with your credentials. Here's an example with Honeygain:
 
-#### 🍯 Honeygain Setup
+#### 🍯 Honeygain Setup Example
 ```bash
 cd honeygain
+cp .env.example .env
 nano .env
 ```
 
@@ -79,30 +81,11 @@ HONEYGAIN_PASSWORD=your-password
 HONEYGAIN_DEVICE_NAME=RaspberryPi-Honeygain
 ```
 
-#### ♟️ Pawns.app Setup
-```bash
-cd ../pawns-app
-nano .env
-```
-
-Add your IPRoyal/Pawns.app credentials:
-```env
-IPROYAL_EMAIL=your-email@example.com
-IPROYAL_PASSWORD=your-password
-IPROYAL_DEVICE_NAME=RaspberryPi-Pawns
-```
-
-#### 🚦 TraffMonetizer Setup
-```bash
-cd ../traffmonetizer
-nano .env
-```
-
-Add your TraffMonetizer token:
-```env
-TRAFFMONETIZER_TOKEN=your-token-here
-TRAFFMONETIZER_DEVICE_NAME=RaspberryPi-Traff
-```
+#### 📝 Other Services
+For **Pawns.app**, **PacketShare**, and **TraffMonetizer**, follow the same process:
+1. Navigate to the service folder
+2. Copy `.env.example` to `.env`
+3. Fill in your credentials in the `.env` file
 
 ## 🚀 Running the Services
 
@@ -111,6 +94,7 @@ TRAFFMONETIZER_DEVICE_NAME=RaspberryPi-Traff
 # From the root directory
 docker-compose -f honeygain/docker-compose.yml up -d
 docker-compose -f pawns-app/docker-compose.yml up -d
+docker-compose -f packetshare/docker-compose.yml up -d
 docker-compose -f traffmonetizer/docker-compose.yml up -d
 ```
 
@@ -121,6 +105,9 @@ cd honeygain && docker-compose up -d
 
 # Pawns.app only
 cd pawns-app && docker-compose up -d
+
+# PacketShare only
+cd packetshare && docker-compose up -d
 
 # TraffMonetizer only
 cd traffmonetizer && docker-compose up -d
@@ -136,6 +123,7 @@ docker ps
 # View logs for specific service
 docker logs honeygain-app
 docker logs pawns-app-container
+docker logs packetshare-container
 docker logs traffmonetizer-container
 
 # Follow logs in real-time
@@ -148,7 +136,8 @@ Log into each platform's dashboard to monitor your earnings:
 
 - 🍯 **Honeygain**: [Dashboard](https://dashboard.honeygain.com/)
 - ♟️ **Pawns.app**: [Dashboard](https://pawns.app/dashboard)
-- 🚦 **TraffMonetizer**: [Dashboard](https://traffmonetizer.com/dashboard)
+- � **PacketShare**: [Dashboard](https://www.packetshare.io/dashboard)
+- �🚦 **TraffMonetizer**: [Dashboard](https://traffmonetizer.com/dashboard)
 
 ## 🔧 Troubleshooting
 

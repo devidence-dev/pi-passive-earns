@@ -1,0 +1,12 @@
+services:
+  packetshare:
+    # Official PacketShare image
+    image: packetshare/packetshare
+
+    container_name: packetshare-container
+
+    # Command to start the service with email and password.
+    # IMPORTANT! Configure environment variables in .env
+    command: -accept-tos -email=${PACKETSHARE_EMAIL} -password=${PACKETSHARE_PASSWORD}
+
+    restart: unless-stopped
