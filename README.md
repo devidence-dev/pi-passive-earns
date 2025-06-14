@@ -2,7 +2,11 @@
 
 ![Pi Passive Earnings Banner](image.png)
 
-🚀 **Transform your Raspberry Pi into a passive income machine!** This repository contains Docker configurations to run multiple passive earning applications on your Raspberry Pi or any Linux system.
+🚀 **Transform your Raspberry Pi into a passive income ma- 🍯 **Honeygain**: [Dashboard](https://dashboard.honeygain.com/)
+- ♟️ **Pawns.app**: [Dashboard](https://pawns.app/dashboard)
+- 📦 **PacketShare**: [Dashboard](https://www.packetshare.io/dashboard)
+- 🚦 **TraffMonetizer**: [Dashboard](https://traffmonetizer.com/dashboard)
+- 📻 **EarnFM**: [Dashboard](https://earn.fm/dashboard)e!** This repository contains Docker configurations to run multiple passive earning applications on your Raspberry Pi or any Linux system.
 
 ## 📋 Table of Contents
 
@@ -22,7 +26,7 @@
 
 ## 🌟 What's Included
 
-This repository includes Docker configurations for four popular passive earning platforms:
+This repository includes Docker configurations for five popular passive earning platforms:
 
 | Service | Description | 🔗 Sign Up Link |
 |---------|-------------|------------------|
@@ -30,6 +34,7 @@ This repository includes Docker configurations for four popular passive earning 
 | ♟️ **Pawns.app** | Monetize your internet connection through IPRoyal's network | [Join Pawns.app](https://pawns.app/?r=14794322) |
 | 📦 **PacketShare** | Earn by sharing your internet bandwidth | [Join PacketShare](https://www.packetshare.io/?code=B9145C90A9403C82) |
 | 🚦 **TraffMonetizer** | Earn by sharing your internet traffic | [Join TraffMonetizer](https://traffmonetizer.com/?aff=1908800) |
+| 📻 **EarnFM** | Earn by sharing your internet bandwidth | [Join EarnFM](https://earn.fm/ref/PX1W89FS) |
 
 ## 💸 Earning Potential
 
@@ -96,6 +101,7 @@ docker-compose -f honeygain/docker-compose.yml up -d
 docker-compose -f pawns-app/docker-compose.yml up -d
 docker-compose -f packetshare/docker-compose.yml up -d
 docker-compose -f traffmonetizer/docker-compose.yml up -d
+docker-compose -f earnfm/docker-compose.yml up -d
 ```
 
 ### Start Individual Services
@@ -111,6 +117,9 @@ cd packetshare && docker-compose up -d
 
 # TraffMonetizer only
 cd traffmonetizer && docker-compose up -d
+
+# EarnFM only
+cd earnfm && docker-compose up -d
 ```
 
 ### Check Service Status
@@ -125,6 +134,7 @@ docker logs honeygain-app
 docker logs pawns-app-container
 docker logs packetshare-container
 docker logs traffmonetizer-container
+docker logs earnfm-client
 
 # Follow logs in real-time
 docker logs -f honeygain-app

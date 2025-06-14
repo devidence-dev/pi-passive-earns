@@ -1,0 +1,12 @@
+services:
+  earnfm-client:
+    # Official EarnFM client image
+    image: earnfm/earnfm-client:latest
+
+    container_name: earnfm-client
+
+    # Environment variables for EarnFM token
+    environment:
+      - EARNFM_TOKEN=${EARNFM_TOKEN}
+
+    restart: always
