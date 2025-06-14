@@ -6,7 +6,8 @@
 - ♟️ **Pawns.app**: [Dashboard](https://pawns.app/dashboard)
 - 📦 **PacketShare**: [Dashboard](https://www.packetshare.io/dashboard)
 - 🚦 **TraffMonetizer**: [Dashboard](https://traffmonetizer.com/dashboard)
-- 📻 **EarnFM**: [Dashboard](https://earn.fm/dashboard)e!** This repository contains Docker configurations to run multiple passive earning applications on your Raspberry Pi or any Linux system.
+- 📻 **EarnFM**: [Dashboard](https://earn.fm/dashboard)
+- 🟡 **BitPing**: [Dashboard](https://app.bitping.com/dashboard)e!** This repository contains Docker configurations to run multiple passive earning applications on your Raspberry Pi or any Linux system.
 
 ## 📋 Table of Contents
 
@@ -26,7 +27,7 @@
 
 ## 🌟 What's Included
 
-This repository includes Docker configurations for five popular passive earning platforms:
+This repository includes Docker configurations for six popular passive earning platforms:
 
 | Service | Description | 🔗 Sign Up Link |
 |---------|-------------|------------------|
@@ -35,6 +36,7 @@ This repository includes Docker configurations for five popular passive earning 
 | 📦 **PacketShare** | Earn by sharing your internet bandwidth | [Join PacketShare](https://www.packetshare.io/?code=B9145C90A9403C82) |
 | 🚦 **TraffMonetizer** | Earn by sharing your internet traffic | [Join TraffMonetizer](https://traffmonetizer.com/?aff=1908800) |
 | 📻 **EarnFM** | Earn by sharing your internet bandwidth | [Join EarnFM](https://earn.fm/ref/PX1W89FS) |
+| 🟡 **BitPing** | Network latency testing and monitoring service | [Join BitPing](https://app.bitping.com/dashboard) |
 
 ## 💸 Earning Potential
 
@@ -102,6 +104,7 @@ docker-compose -f pawns-app/docker-compose.yml up -d
 docker-compose -f packetshare/docker-compose.yml up -d
 docker-compose -f traffmonetizer/docker-compose.yml up -d
 docker-compose -f earnfm/docker-compose.yml up -d
+docker-compose -f bitping/docker-compose.yml up -d
 ```
 
 ### Start Individual Services
@@ -120,6 +123,9 @@ cd traffmonetizer && docker-compose up -d
 
 # EarnFM only
 cd earnfm && docker-compose up -d
+
+# BitPing only
+cd bitping && docker-compose up -d
 ```
 
 ### Check Service Status
@@ -135,6 +141,7 @@ docker logs pawns-app-container
 docker logs packetshare-container
 docker logs traffmonetizer-container
 docker logs earnfm-client
+docker logs bitping-container
 
 # Follow logs in real-time
 docker logs -f honeygain-app

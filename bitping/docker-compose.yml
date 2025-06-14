@@ -1,0 +1,27 @@
+services:
+  bitping:
+    # Official BitPing image
+    image: bitping/bitpingd:latest
+
+    container_name: bitping-container
+
+    # Environment variables for BitPing credentials
+    environment:
+      - BITPING_EMAIL=${BITPING_EMAIL}
+      - BITPING_PASSWORD=${BITPING_PASSWORD}
+      - BITPING_MFA=${BITPING_MFA}
+
+    # Volume for BitPing data persistence
+    volumes:
+      - ${BITPING_VOLUME_PATH:-bitpingd-volume}:/root/.bitpingd
+
+    # Interactive mode
+    stdin_open: true
+    tty: true
+
+    restart: unless-stopped
+
+volumes:
+  bitpingd-volume:
+
+# docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd bitping/bitpingd:latest
