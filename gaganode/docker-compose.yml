@@ -1,0 +1,22 @@
+services:
+  gaganode:
+    # Custom GaGaNode image
+    build: .
+    
+    container_name: gaganode-container
+
+    # Environment variables for GaGaNode token
+    environment:
+      - GAGANODE_TOKEN=${GAGANODE_TOKEN}
+
+    # Volume for GaGaNode data persistence
+    volumes:
+      - ${GAGANODE_VOLUME_PATH:-gaganode-volume}:/app/data
+
+    restart: unless-stopped
+
+    # Run with privileges for service management
+    privileged: true
+
+volumes:
+  gaganode-volume:

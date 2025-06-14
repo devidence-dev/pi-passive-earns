@@ -2,12 +2,8 @@
 
 ![Pi Passive Earnings Banner](image.png)
 
-🚀 **Transform your Raspberry Pi into a passive income ma- 🍯 **Honeygain**: [Dashboard](https://dashboard.honeygain.com/)
-- ♟️ **Pawns.app**: [Dashboard](https://pawns.app/dashboard)
-- 📦 **PacketShare**: [Dashboard](https://www.packetshare.io/dashboard)
-- 🚦 **TraffMonetizer**: [Dashboard](https://traffmonetizer.com/dashboard)
-- 📻 **EarnFM**: [Dashboard](https://earn.fm/dashboard)
-- 🟡 **BitPing**: [Dashboard](https://app.bitping.com/dashboard)e!** This repository contains Docker configurations to run multiple passive earning applications on your Raspberry Pi or any Linux system.
+🚀 **Transform your Raspberry Pi into a passive income machine**
+This repository contains Docker configurations to run multiple passive earning applications on your Raspberry Pi or any Linux system.
 
 ## 📋 Table of Contents
 
@@ -27,7 +23,7 @@
 
 ## 🌟 What's Included
 
-This repository includes Docker configurations for six popular passive earning platforms:
+This repository includes Docker configurations for seven popular passive earning platforms:
 
 | Service | Description | 🔗 Sign Up Link |
 |---------|-------------|------------------|
@@ -37,6 +33,7 @@ This repository includes Docker configurations for six popular passive earning p
 | 🚦 **TraffMonetizer** | Earn by sharing your internet traffic | [Join TraffMonetizer](https://traffmonetizer.com/?aff=1908800) |
 | 📻 **EarnFM** | Earn by sharing your internet bandwidth | [Join EarnFM](https://earn.fm/ref/PX1W89FS) |
 | 🟡 **BitPing** | Network latency testing and monitoring service | [Join BitPing](https://app.bitping.com/dashboard) |
+| 🟢 **GaGaNode** | Decentralized residential proxy network | [Join GaGaNode](https://dashboard.gaganode.com/register) |
 
 ## 💸 Earning Potential
 
@@ -89,7 +86,7 @@ HONEYGAIN_DEVICE_NAME=RaspberryPi-Honeygain
 ```
 
 #### 📝 Other Services
-For **Pawns.app**, **PacketShare**, and **TraffMonetizer**, follow the same process:
+For **Pawns.app**, **PacketShare**, **TraffMonetizer**, **EarnFM**, **BitPing**, and **GaGaNode**, follow the same process:
 1. Navigate to the service folder
 2. Copy `.env.example` to `.env`
 3. Fill in your credentials in the `.env` file
@@ -105,6 +102,7 @@ docker-compose -f packetshare/docker-compose.yml up -d
 docker-compose -f traffmonetizer/docker-compose.yml up -d
 docker-compose -f earnfm/docker-compose.yml up -d
 docker-compose -f bitping/docker-compose.yml up -d
+docker-compose -f gaganode/docker-compose.yml up -d
 ```
 
 ### Start Individual Services
@@ -126,6 +124,9 @@ cd earnfm && docker-compose up -d
 
 # BitPing only
 cd bitping && docker-compose up -d
+
+# GaGaNode only
+cd gaganode && docker-compose up -d --build
 ```
 
 ### Check Service Status
@@ -142,6 +143,7 @@ docker logs packetshare-container
 docker logs traffmonetizer-container
 docker logs earnfm-client
 docker logs bitping-container
+docker logs gaganode-container
 
 # Follow logs in real-time
 docker logs -f honeygain-app
