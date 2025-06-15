@@ -23,7 +23,7 @@ This repository contains Docker configurations to run multiple passive earning a
 
 ## 🌟 What's Included
 
-This repository includes Docker configurations for eight popular passive earning platforms:
+This repository includes Docker configurations for nine popular passive earning platforms:
 
 | Service | Description | 🔗 Sign Up Link |
 |---------|-------------|------------------|
@@ -35,6 +35,7 @@ This repository includes Docker configurations for eight popular passive earning
 | 🟡 **BitPing** | Network latency testing and monitoring service | [Join BitPing](https://app.bitping.com/dashboard) |
 | 🟢 **GaGaNode** | Decentralized residential proxy network | [Join GaGaNode](https://dashboard.gaganode.com/register) |
 | 🔵 **Repocket** | Share your internet connection for rewards | [Join Repocket](https://link.repocket.com/mRkU) |
+| 🔮 **MystNode** | Decentralized VPN network node | [Join MystNode](https://mystnodes.co/?referral_code=WMvvmvRaPKumeqos1HQk7a7h9rSTCyp77IofhXbW) |
 
 ## 💸 Earning Potential
 
@@ -87,10 +88,12 @@ HONEYGAIN_DEVICE_NAME=RaspberryPi-Honeygain
 ```
 
 #### 📝 Other Services
-For **Pawns.app**, **PacketShare**, **TraffMonetizer**, **EarnFM**, **BitPing**, **GaGaNode**, and **Repocket**, follow the same process:
+For **Pawns.app**, **PacketShare**, **TraffMonetizer**, **EarnFM**, **BitPing**, **GaGaNode**, **Repocket**, and **MystNode**, follow the same process:
 1. Navigate to the service folder
 2. Copy `.env.example` to `.env`
 3. Fill in your credentials in the `.env` file
+
+**🔮 Special Note for MystNode**: After starting the container, access the configuration interface at `http://localhost:4449` (or your server's IP:4449) to complete the setup.
 
 ## 🚀 Running the Services
 
@@ -105,6 +108,7 @@ docker-compose -f earnfm/docker-compose.yml up -d
 docker-compose -f bitping/docker-compose.yml up -d
 docker-compose -f gaganode/docker-compose.yml up -d
 docker-compose -f repocket/docker-compose.yml up -d
+docker-compose -f mystnode/docker-compose.yml up -d
 ```
 
 ### Start Individual Services
@@ -132,6 +136,9 @@ cd gaganode && docker-compose up -d --build
 
 # Repocket only
 cd repocket && docker-compose up -d
+
+# MystNode only
+cd mystnode && docker-compose up -d
 ```
 
 ### Check Service Status
@@ -150,12 +157,27 @@ docker logs earnfm-client
 docker logs bitping-container
 docker logs gaganode-container
 docker logs repocket-container
+docker logs mystnode-container
 
 # Follow logs in real-time
 docker logs -f honeygain-app
 ```
 
-## 🔧 Troubleshooting
+## � Monitoring Your Earnings
+
+Log into each platform's dashboard to monitor your earnings:
+
+- 🍯 **Honeygain**: [Dashboard](https://dashboard.honeygain.com/)
+- ♟️ **Pawns.app**: [Dashboard](https://pawns.app/dashboard)
+- 📦 **PacketShare**: [Dashboard](https://www.packetshare.io/dashboard)
+- 🚦 **TraffMonetizer**: [Dashboard](https://traffmonetizer.com/dashboard)
+- 📻 **EarnFM**: [Dashboard](https://earn.fm/dashboard)
+- 🟡 **BitPing**: [Dashboard](https://app.bitping.com/dashboard)
+- 🟢 **GaGaNode**: [Dashboard](https://dashboard.gaganode.com)
+- 🔵 **Repocket**: [Dashboard](https://repocket.com/dashboard)
+- 🔮 **MystNode**: Access via `http://localhost:4449` or `http://YOUR_SERVER_IP:4449`
+
+## �🔧 Troubleshooting
 
 ### Common Issues
 

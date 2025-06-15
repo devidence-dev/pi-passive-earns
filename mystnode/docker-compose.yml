@@ -1,0 +1,30 @@
+services:
+  mystnode:
+    # Official MystNode image
+    image: mysteriumnetwork/myst:latest
+
+    container_name: mystnode-container
+
+    # Network capabilities required
+    cap_add:
+      - NET_ADMIN
+
+    # Port mapping
+    ports:
+      - "4449:4449"
+
+    # Volume for data persistence
+    volumes:
+      - ${MYSTNODE_VOLUME_PATH:-mystnode-data}:/var/lib/mysterium-node
+
+    # Device mapping for TUN interface (Linux/macOS)
+    devices:
+      - /dev/net/tun:/dev/net/tun
+
+    # Command with agreed terms
+    command: service --agreed-terms-and-conditions
+
+    restart: unless-stopped
+
+volumes:
+  mystnode-data:
