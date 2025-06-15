@@ -23,7 +23,7 @@ This repository contains Docker configurations to run multiple passive earning a
 
 ## 🌟 What's Included
 
-This repository includes Docker configurations for seven popular passive earning platforms:
+This repository includes Docker configurations for eight popular passive earning platforms:
 
 | Service | Description | 🔗 Sign Up Link |
 |---------|-------------|------------------|
@@ -34,6 +34,7 @@ This repository includes Docker configurations for seven popular passive earning
 | 📻 **EarnFM** | Earn by sharing your internet bandwidth | [Join EarnFM](https://earn.fm/ref/PX1W89FS) |
 | 🟡 **BitPing** | Network latency testing and monitoring service | [Join BitPing](https://app.bitping.com/dashboard) |
 | 🟢 **GaGaNode** | Decentralized residential proxy network | [Join GaGaNode](https://dashboard.gaganode.com/register) |
+| 🔵 **Repocket** | Share your internet connection for rewards | [Join Repocket](https://link.repocket.com/mRkU) |
 
 ## 💸 Earning Potential
 
@@ -86,7 +87,7 @@ HONEYGAIN_DEVICE_NAME=RaspberryPi-Honeygain
 ```
 
 #### 📝 Other Services
-For **Pawns.app**, **PacketShare**, **TraffMonetizer**, **EarnFM**, **BitPing**, and **GaGaNode**, follow the same process:
+For **Pawns.app**, **PacketShare**, **TraffMonetizer**, **EarnFM**, **BitPing**, **GaGaNode**, and **Repocket**, follow the same process:
 1. Navigate to the service folder
 2. Copy `.env.example` to `.env`
 3. Fill in your credentials in the `.env` file
@@ -103,6 +104,7 @@ docker-compose -f traffmonetizer/docker-compose.yml up -d
 docker-compose -f earnfm/docker-compose.yml up -d
 docker-compose -f bitping/docker-compose.yml up -d
 docker-compose -f gaganode/docker-compose.yml up -d
+docker-compose -f repocket/docker-compose.yml up -d
 ```
 
 ### Start Individual Services
@@ -127,6 +129,9 @@ cd bitping && docker-compose up -d
 
 # GaGaNode only
 cd gaganode && docker-compose up -d --build
+
+# Repocket only
+cd repocket && docker-compose up -d
 ```
 
 ### Check Service Status
@@ -144,19 +149,11 @@ docker logs traffmonetizer-container
 docker logs earnfm-client
 docker logs bitping-container
 docker logs gaganode-container
+docker logs repocket-container
 
 # Follow logs in real-time
 docker logs -f honeygain-app
 ```
-
-## 📊 Monitoring Your Earnings
-
-Log into each platform's dashboard to monitor your earnings:
-
-- 🍯 **Honeygain**: [Dashboard](https://dashboard.honeygain.com/)
-- ♟️ **Pawns.app**: [Dashboard](https://pawns.app/dashboard)
-- � **PacketShare**: [Dashboard](https://www.packetshare.io/dashboard)
-- �🚦 **TraffMonetizer**: [Dashboard](https://traffmonetizer.com/dashboard)
 
 ## 🔧 Troubleshooting
 
@@ -213,10 +210,21 @@ PX1 - devidence.dev ©
 
 PX1 - devidence.dev ©
 
----
-
 💡 **Pro Tip**: For maximum earnings, run this setup 24/7 on a dedicated device with a stable internet connection!
 
 🙏 **Support**: If this repository helped you, please consider using the referral links above when signing up for the services!
 
 **Happy Earning! 💰🚀**
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is provided for educational and informational purposes only. The author is not responsible for:
+
+- Any financial losses or damages incurred from using these services
+- Changes to service terms, conditions, or availability
+- Potential security risks from running third-party applications
+- Compliance with local laws and regulations in your jurisdiction
+
+**Use at your own risk. Always review terms of service and privacy policies of each platform before use.**
