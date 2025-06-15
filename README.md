@@ -23,7 +23,7 @@ This repository contains Docker configurations to run multiple passive earning a
 
 ## 🌟 What's Included
 
-This repository includes Docker configurations for nine popular passive earning platforms:
+This repository includes Docker configurations for ten popular passive earning platforms:
 
 | Service | Description | 🔗 Sign Up Link |
 |---------|-------------|------------------|
@@ -36,6 +36,7 @@ This repository includes Docker configurations for nine popular passive earning 
 | 🟢 **GaGaNode** | Decentralized residential proxy network | [Join GaGaNode](https://dashboard.gaganode.com/register) |
 | 🔵 **Repocket** | Share your internet connection for rewards | [Join Repocket](https://link.repocket.com/mRkU) |
 | 🔮 **MystNode** | Decentralized VPN network node | [Join MystNode](https://mystnodes.co/?referral_code=WMvvmvRaPKumeqos1HQk7a7h9rSTCyp77IofhXbW) |
+| 🔍 **Presearch** | Decentralized search engine node operator | [Join Presearch](https://presearch.com/signup?rid=4850494) |
 
 ## 💸 Earning Potential
 
@@ -88,12 +89,14 @@ HONEYGAIN_DEVICE_NAME=RaspberryPi-Honeygain
 ```
 
 #### 📝 Other Services
-For **Pawns.app**, **PacketShare**, **TraffMonetizer**, **EarnFM**, **BitPing**, **GaGaNode**, **Repocket**, and **MystNode**, follow the same process:
+For **Pawns.app**, **PacketShare**, **TraffMonetizer**, **EarnFM**, **BitPing**, **GaGaNode**, **Repocket**, **MystNode**, and **Presearch**, follow the same process:
 1. Navigate to the service folder
 2. Copy `.env.example` to `.env`
 3. Fill in your credentials in the `.env` file
 
 **🔮 Special Note for MystNode**: After starting the container, access the configuration interface at `http://localhost:4449` (or your server's IP:4449) to complete the setup.
+
+**🔍 Special Note for Presearch**: Get your registration code from `https://nodes.presearch.com/dashboard` before setup.
 
 ## 🚀 Running the Services
 
@@ -109,6 +112,7 @@ docker-compose -f bitping/docker-compose.yml up -d
 docker-compose -f gaganode/docker-compose.yml up -d
 docker-compose -f repocket/docker-compose.yml up -d
 docker-compose -f mystnode/docker-compose.yml up -d
+docker-compose -f presearch/docker-compose.yml up -d
 ```
 
 ### Start Individual Services
@@ -139,6 +143,9 @@ cd repocket && docker-compose up -d
 
 # MystNode only
 cd mystnode && docker-compose up -d
+
+# Presearch only
+cd presearch && docker-compose up -d
 ```
 
 ### Check Service Status
@@ -158,6 +165,7 @@ docker logs bitping-container
 docker logs gaganode-container
 docker logs repocket-container
 docker logs mystnode-container
+docker logs presearch-node
 
 # Follow logs in real-time
 docker logs -f honeygain-app
@@ -176,6 +184,7 @@ Log into each platform's dashboard to monitor your earnings:
 - 🟢 **GaGaNode**: [Dashboard](https://dashboard.gaganode.com)
 - 🔵 **Repocket**: [Dashboard](https://repocket.com/dashboard)
 - 🔮 **MystNode**: Access via `http://localhost:4449` or `http://YOUR_SERVER_IP:4449`
+- 🔍 **Presearch**: [Dashboard](https://nodes.presearch.com/dashboard)
 
 ## �🔧 Troubleshooting
 
