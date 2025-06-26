@@ -1,7 +1,7 @@
 services:
   bitping:
     # Official BitPing image
-    image: bitping/bitpingd:latest
+    image: ${DOCKER_IMAGE:-bitping/bitpingd:latest}
 
     container_name: bitping-container
 

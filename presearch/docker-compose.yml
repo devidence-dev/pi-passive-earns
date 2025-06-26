@@ -1,37 +1,15 @@
 services:
   presearch-node:
     # Official Presearch node image
-    image: presearch/node
-
+    image: ${DOCKER_IMAGE:-presearch/node:latest}
     container_name: presearch-node
-
     # Environment variables for registration
     environment:
       - REGISTRATION_CODE=${PRESEARCH_REGISTRATION_CODE}
-
     # Volume for data persistence
     volumes:
       - ${PRESEARCH_VOLUME_PATH:-presearch-node-storage}:/app/node
-
     restart: unless-stopped
-
-  # presearch-auto-updater:
-  #   # Auto-updater for the Presearch node
-  #   image: presearch/auto-updater
-
-  #   container_name: presearch-auto-updater
-
-  #   # Mount Docker socket for container management
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock
-
-  #   # Auto-updater configuration
-  #   command: --cleanup --interval 900 presearch-auto-updater presearch-node
-
-  #   restart: unless-stopped
-
-  #   depends_on:
-  #     - presearch-node
 
 volumes:
   presearch-node-storage:

@@ -1,10 +1,8 @@
 services:
   repocket:
     # Official Repocket image
-    image: repocket/repocket:latest
-
+    image: ${DOCKER_IMAGE:-repocket/repocket:latest}
     container_name: repocket-container
-
     # Environment variables for Repocket credentials
     environment:
       - RP_EMAIL=${RP_EMAIL}

@@ -1,7 +1,7 @@
 services:
   pawns-app:
     # Uses the official Pawns.app (IPRoyal) image from Docker Hub.
-    image: iproyal/pawns-cli:latest
+    image: ${DOCKER_IMAGE:-iproyal/pawns-cli:latest}
 
     # Assigns an easy-to-remember container name.
     container_name: pawns-app-container

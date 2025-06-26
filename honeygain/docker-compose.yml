@@ -1,11 +1,9 @@
 services:
   honeygain:
     # Uses the official Honeygain image from Docker Hub.
-    image: honeygain/honeygain:latest
-
+    image: ${DOCKER_IMAGE:-honeygain/honeygain:latest}
     # Assigns an easy-to-remember container name.
     container_name: honeygain-app
-
     # Command to start Honeygain with your credentials.
     # IMPORTANT! Replace the values below with your data.
     command:
