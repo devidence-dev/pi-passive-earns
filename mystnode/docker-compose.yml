@@ -9,6 +9,8 @@ services:
     # Port mapping
     ports:
       - "4449:4449"
+    # expose:
+    #   - 4449
     # Volume for data persistence
     volumes:
       - ${MYSTNODE_VOLUME_PATH:-mystnode-data}:/var/lib/mysterium-node
