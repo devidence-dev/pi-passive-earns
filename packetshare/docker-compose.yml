@@ -1,5 +1,7 @@
 services:
   packetshare:
+    env_file:
+      - .env
     # Official PacketShare image
     image: ${DOCKER_IMAGE:-packetshare/packetshare:latest}
     container_name: packetshare-container

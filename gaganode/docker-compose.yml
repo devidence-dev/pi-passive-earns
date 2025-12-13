@@ -1,7 +1,11 @@
 services:
   gaganode:
-    # Custom GaGaNode image
-    build: .
+    # Custom GaGaNode image with multi-arch support (amd64 + arm64)
+    build:
+      context: .
+      platforms:
+        - linux/amd64
+        - linux/arm64
     
     container_name: gaganode-container
 
@@ -18,5 +22,3 @@ services:
     # Run with privileges for service management
     privileged: true
 
-volumes:
-  gaganode-volume:

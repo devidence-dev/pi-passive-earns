@@ -1,7 +1,7 @@
 services:
   traffmonetizer:
     # Official TraffMonetizer image
-    image: traffmonetizer/cli_v2:arm64v8
+    image: traffmonetizer/cli_v2:latest
 
     container_name: traffmonetizer-container
 
