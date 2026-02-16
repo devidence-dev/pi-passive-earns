@@ -14,7 +14,11 @@ services:
       - "${HONEYGAIN_PASSWORD}"  # Use an environment variable for security.
       - "-device"     # A name to identify this device in your dashboard.
       - "${HONEYGAIN_DEVICE_NAME}"  # Use an environment variable for security.
-
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 256M
     # Restart policy. 'unless-stopped' restarts the container if it fails,
     # but not if you manually stop it. Ideal for a 24/7 service.
     restart: unless-stopped

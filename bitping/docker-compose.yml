@@ -21,6 +21,12 @@ services:
 
     restart: unless-stopped
 
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 256M
+
 volumes:
   bitpingd-volume:
 

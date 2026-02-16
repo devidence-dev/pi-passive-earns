@@ -28,5 +28,11 @@ services:
     volumes:
       - pawns_data:/app
 
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 64M
+
 volumes:
   pawns_data: {}
