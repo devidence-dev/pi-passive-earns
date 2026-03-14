@@ -27,3 +27,18 @@ services:
     # Gives the container direct access to the host network,
     # which can improve connectivity and performance.
     network_mode: host
+
+  honeygain-pot:
+    image: ${HONEYGAIN_POT_IMAGE:-ghcr.io/xterna/honeygain-pot:latest}
+    container_name: honeygain-pot
+    restart: unless-stopped
+    environment:
+      - EMAIL=${HONEYGAIN_EMAIL}
+      - PASSWORD=${HONEYGAIN_PASSWORD}
+    depends_on:
+      - honeygain
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 128M
